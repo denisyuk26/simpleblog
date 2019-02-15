@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { getPosts, getPost } from "../actions";
+import { getPost } from "../actions";
 import CommentList from "./Comments";
 import styles from "./app.module.css";
 
@@ -37,13 +37,12 @@ class Post extends Component {
 
 function mapStateToProps(state) {
   return {
-    posts: state.posts,
     post: state.post,
     active: state.active
   };
 }
 function matchDispatchToProps(dispatch) {
-  return bindActionCreators({ getPosts: getPosts, getPost: getPost }, dispatch);
+  return bindActionCreators({  getPost: getPost }, dispatch);
 }
 
 export default connect(
