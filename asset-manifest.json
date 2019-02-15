@@ -1,13 +1,13 @@
 {
   "main.css": "/simpleblog/static/css/main.6be97f51.chunk.css",
-  "main.js": "/simpleblog/static/js/main.a3c1b3f0.chunk.js",
-  "main.js.map": "/simpleblog/static/js/main.a3c1b3f0.chunk.js.map",
+  "main.js": "/simpleblog/static/js/main.07023cac.chunk.js",
+  "main.js.map": "/simpleblog/static/js/main.07023cac.chunk.js.map",
   "runtime~main.js": "/simpleblog/static/js/runtime~main.870c71cd.js",
   "runtime~main.js.map": "/simpleblog/static/js/runtime~main.870c71cd.js.map",
   "static/js/2.9ce41bd1.chunk.js": "/simpleblog/static/js/2.9ce41bd1.chunk.js",
   "static/js/2.9ce41bd1.chunk.js.map": "/simpleblog/static/js/2.9ce41bd1.chunk.js.map",
   "index.html": "/simpleblog/index.html",
-  "precache-manifest.a5b5e02c4672a74dcf47c60aae06f786.js": "/simpleblog/precache-manifest.a5b5e02c4672a74dcf47c60aae06f786.js",
+  "precache-manifest.fa2c28711a5ae7685aa56c9ee39245df.js": "/simpleblog/precache-manifest.fa2c28711a5ae7685aa56c9ee39245df.js",
   "service-worker.js": "/simpleblog/service-worker.js",
   "static/css/main.6be97f51.chunk.css.map": "/simpleblog/static/css/main.6be97f51.chunk.css.map"
 }
