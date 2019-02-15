@@ -50,6 +50,11 @@
     
 }
 
+.comment {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-bottom: 1px dashed black;
+}
 
 @custom-media --desktop-small-viewport (max-width: 1024px);
 @custom-media --tablet-viewport (max-width: 768px);

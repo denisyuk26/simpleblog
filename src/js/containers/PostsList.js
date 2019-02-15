@@ -3,9 +3,9 @@ import { bindActionCreators } from "redux";
 import { Link } from "react-router-dom";
 
 import { connect } from "react-redux";
-import { selectPost, getPosts, getPost } from "../actions";
+import { selectPost, getPosts } from "../actions";
 
-import styles from './app.module.css'
+import styles from "./app.module.css";
 
 class PostsList extends Component {
   constructor(props) {
@@ -17,15 +17,14 @@ class PostsList extends Component {
     this.props.getPosts();
   }
 
-  getActivePost = () => {
-    this.props.getPost();
-  };
-
   showPostsList = () => {
     return this.props.posts.map(post => (
       <Link key={post.id} to={`/posts/${post.id}`}>
-        <li className = {styles.post_item} onClick={() => this.props.selectPost(post)}>
-          <p className={styles.author}>Author: {post.author}</p> 
+        <li
+          className={styles.post_item}
+          onClick={() => this.props.selectPost(post)}
+        >
+          <p className={styles.author}>Author: {post.author}</p>
           <p className={styles.title}>Title: {post.title}</p>
         </li>
       </Link>
@@ -43,13 +42,12 @@ class PostsList extends Component {
 function mapStateToProps(state) {
   return {
     posts: state.posts,
-    post: state.post,
-    active: state.active
+    post: state.post
   };
 }
 function matchDispatchToProps(dispatch) {
   return bindActionCreators(
-    { getPosts: getPosts, selectPost: selectPost, getPost: getPost() },
+    { getPosts: getPosts, selectPost: selectPost },
     dispatch
   );
 }

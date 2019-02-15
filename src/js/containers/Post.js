@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { selectPost, getPosts, getPost } from "../actions";
+import { getPosts, getPost } from "../actions";
 import CommentList from "./Comments";
-import styles from './app.module.css'
-
+import styles from "./app.module.css";
 
 class Post extends Component {
   componentDidMount() {
@@ -46,10 +45,7 @@ function mapStateToProps(state) {
   };
 }
 function matchDispatchToProps(dispatch) {
-  return bindActionCreators(
-    { getPosts: getPosts, selectPost: selectPost, getPost: getPost },
-    dispatch
-  );
+  return bindActionCreators({ getPosts: getPosts, getPost: getPost }, dispatch);
 }
 
 export default connect(
