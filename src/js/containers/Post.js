@@ -7,15 +7,12 @@ import styles from "./app.module.css";
 
 class Post extends Component {
   componentDidMount() {
-    this.props.getPosts();
     this.props.getPost();
   }
 
   getActivePost = () => {
-    const activeId = localStorage.getItem("post");
-    return this.props.posts
-      .filter(i => `/posts/${i.id}` === activeId)
-      .map(post => {
+    if (this.props.post) {
+      return this.props.post.map(post => {
         return (
           <div key={post.id}>
             <h3>{post.title}</h3>
@@ -25,6 +22,7 @@ class Post extends Component {
           </div>
         );
       });
+    }
   };
 
   render() {
