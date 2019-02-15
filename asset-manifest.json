@@ -1,0 +1,13 @@
+{
+  "main.css": "/simple_blog/static/css/main.6be97f51.chunk.css",
+  "main.js": "/simple_blog/static/js/main.36889e05.chunk.js",
+  "main.js.map": "/simple_blog/static/js/main.36889e05.chunk.js.map",
+  "runtime~main.js": "/simple_blog/static/js/runtime~main.557bab83.js",
+  "runtime~main.js.map": "/simple_blog/static/js/runtime~main.557bab83.js.map",
+  "static/js/2.9ce41bd1.chunk.js": "/simple_blog/static/js/2.9ce41bd1.chunk.js",
+  "static/js/2.9ce41bd1.chunk.js.map": "/simple_blog/static/js/2.9ce41bd1.chunk.js.map",
+  "index.html": "/simple_blog/index.html",
+  "precache-manifest.307fb152df496e5e6042937f5c5fffe0.js": "/simple_blog/precache-manifest.307fb152df496e5e6042937f5c5fffe0.js",
+  "service-worker.js": "/simple_blog/service-worker.js",
+  "static/css/main.6be97f51.chunk.css.map": "/simple_blog/static/css/main.6be97f51.chunk.css.map"
+}
