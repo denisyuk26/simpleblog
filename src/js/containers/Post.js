@@ -11,17 +11,16 @@ class Post extends Component {
   }
 
   getActivePost = () => {
-    if (this.props.post) {
-      return this.props.post.map(post => {
-        return (
-          <div key={post.id}>
-            <h3>{post.title}</h3>
-            <p>{post.body}</p>
-            <p>{post.author}</p>
-            <p>{post.date}</p>
-          </div>
-        );
-      });
+    const { post } = this.props;
+    if (post) {
+      return (
+        <div key={post.id}>
+          <h3>{post.title}</h3>
+          <p>{post.body}</p>
+          <p>{post.author}</p>
+          <p>{post.date}</p>
+        </div>
+      );
     }
   };
 
@@ -42,7 +41,7 @@ function mapStateToProps(state) {
   };
 }
 function matchDispatchToProps(dispatch) {
-  return bindActionCreators({  getPost: getPost }, dispatch);
+  return bindActionCreators({ getPost: getPost }, dispatch);
 }
 
 export default connect(

@@ -2,7 +2,7 @@ const initialState = [];
 
 export function postsFetch(state = initialState, action) {
   switch (action.type) {
-    case "FETCHING_POST_SUCCES":
+    case "FETCHING_POST_SUCCESS":
       return [...action.data];
     default:
       return state;
@@ -12,7 +12,7 @@ export function postsFetch(state = initialState, action) {
 export function selectPost(state = initialState, action) {
   switch (action.type) {
     case "SELECT_POST":
-      return [action.data];
+      return action.data;
     default:
       return state;
   }
@@ -21,7 +21,7 @@ export function selectPost(state = initialState, action) {
 export function getPost(state = null, action) {
   switch (action.type) {
     case "GET_POST":
-      return [action.data];
+      return action.data;
     default:
       return state;
   }

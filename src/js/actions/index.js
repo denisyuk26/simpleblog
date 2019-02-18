@@ -1,28 +1,32 @@
 export const selectPost = post => {
-  localStorage.setItem("post", `/posts/${post.id}`);
+  const url  = localStorage.setItem("post", `/posts/${post.id}`);
   return {
     type: "SELECT_POST",
-    data: post.id
+    data: url
   };
 };
 
-export const getPosts = () => {
-  return dispatch => {
-    fetch("https://simple-blog-api.crew.red/posts")
-      .then(response => response.json())
-      .then(posts => {
-        dispatch({ type: "FETCHING_POST_SUCCES", data: posts });
-      });
-  };
+export const getPosts = () => async dispatch => {
+  try {
+    const response = await fetch("https://simple-blog-api.crew.red/posts");
+    const posts = await response.json();
+    const postsState = dispatch({ type: "FETCHING_POST_SUCCESS", data: posts });
+    return postsState;
+  } catch (error) {
+    console.log('Oops, we can\'t get posts, try reload the page',error);
+  }
 };
 
-export const getPost = () => {
+export const getPost = () => async dispatch => {
   let id = localStorage.getItem("post");
-  return dispatch => {
-    fetch(`https://simple-blog-api.crew.red${id}?_embed=comments`)
-      .then(response => response.json())
-      .then(post => {
-        dispatch({ type: "GET_POST", data: post });
-      });
-  };
+  try {
+    const response = await fetch(
+      `https://simple-blog-api.crew.red${id}?_embed=comments`
+    );
+    const post = await response.json();
+    const postState = dispatch({ type: "GET_POST", data: post });
+    return postState;
+  } catch (error) {
+    console.log(error);
+  }
 };

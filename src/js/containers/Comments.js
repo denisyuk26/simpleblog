@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { getPost } from "../actions";
-import styles from './app.module.css'
+import styles from "./app.module.css";
 
 class CommentsList extends Component {
   constructor(props) {
@@ -15,16 +15,14 @@ class CommentsList extends Component {
 
   getComments = () => {
     if (this.props.post) {
-      return this.props.post.map(postItem =>
-        postItem.comments.map(comment => (
-          <div className={styles.comment} key={comment.id}>
-            <p>{comment.body}</p>
-            <p>{comment.date}</p>
-          </div>
-        ))
-      );
+      return this.props.post.comments.map(comment => (
+        <div className={styles.comment} key={comment.id}>
+          <p>{comment.body}</p>
+          <p>{comment.date}</p>
+        </div>
+      ));
     }
-    return;
+    return null;
   };
   render() {
     return (
@@ -38,7 +36,6 @@ class CommentsList extends Component {
 
 function mapStateToProps(state) {
   return {
-    posts: state.posts,
     post: state.post
   };
 }
